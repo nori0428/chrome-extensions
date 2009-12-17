@@ -1,0 +1,15 @@
+{
+  "name": "zeroview",
+  "version": "1.2",
+  "description": "porting from http://t_trace.wed.macserver.jp/overview.html",
+  "browser_action": {
+      "default_title": "zeroview",
+      "default_icon": "zero.png"
+  },
+  "permissions": [
+      "tabs",
+      "http://*/",
+      "https://*/"
+  ],
+  "background_page": "background.html"
+}
