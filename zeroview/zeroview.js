@@ -24,7 +24,7 @@
 
 // repetition control
 if (document.body.Target_frame) {
-    return false;
+    return;
 }
 
 //Variables
@@ -47,12 +47,12 @@ setTimeout('stop_scroll\(0\)', 500);
 
 //Creating target frame
 var target_frame = document.createElement('div');
-target_frame.style.position= 'absolute';
+target_frame.style.position = 'absolute';
 target_frame.style.width = orgiginal_page_width + 'px';
 target_frame.style.height = target_height + 'px';
 target_frame.style.top = original_page_scroll + 'px';
 target_frame.style.border = 'solid ' + 2/target_scale + 'px rgb(40, 20, 10)';
-target_frame.style.backgroundColor= 'rgba(255, 120, 10, 0.2)';
+target_frame.style.backgroundColor = 'rgba(255, 120, 10, 0.2)';
 target_frame.style.zIndex = '99999';
 target_frame.style.webkitBorderRadius = 5 / target_scale + 'px';
 target.appendChild(target_frame);
@@ -76,7 +76,6 @@ function reset(e, target_scale){
     document.body.style.webkitTransform = 'scale(1)';
     goSmooth = setInterval('go_smooth('+scrollY+')', 10);
     setTimeout('stop_scroll\('+scrollY+'\)', 500);
-    //window.scrollBy(0, scrollY);
     document.body.removeEventListener('mousemove', function(e){moveTarget(e, target_scale);}, true );
     e.stopPropagation();
 }
@@ -85,6 +84,9 @@ function reset(e, target_scale){
 function moveTarget(e, target_scale){
     var page_offset = window.pageYOffset;
     var t_frame = document.body.Target_frame;
+    if (!t_frame) {
+	return;
+    }
     var t_frame_height = t_frame.offsetHeight;
     var pageHeight = target.scrollHeight;
     var topHeight = (e.clientY / target_scale) - (t_frame_height / 2) + (page_offset / target_scale);
