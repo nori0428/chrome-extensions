@@ -84,8 +84,8 @@ function reset(e, target_scale){
 //Target frame mover
 function moveTarget(e, target_scale){
     var page_offset = window.pageYOffset;
-    var t_frame　=　document.body.Target_frame;
-    var t_frame_height　=　t_frame.offsetHeight;
+    var t_frame = document.body.Target_frame;
+    var t_frame_height = t_frame.offsetHeight;
     var pageHeight = target.scrollHeight;
     var topHeight = (e.clientY / target_scale) - (t_frame_height / 2) + (page_offset / target_scale);
     if(topHeight < 0)topHeight = 0;
