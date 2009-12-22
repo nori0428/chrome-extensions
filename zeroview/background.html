@@ -2,7 +2,7 @@
 <head>
   <script type="text/javascript">
     chrome.browserAction.onClicked.addListener(function(tab) {
-    chrome.tabs.executeScript(tab.id, {file:'zeroview.js'});
+      chrome.tabs.executeScript(tab.id, {file:'zeroview_init.js'});
     });
 </script>
 </head>

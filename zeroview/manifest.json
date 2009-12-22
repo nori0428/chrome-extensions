@@ -1,6 +1,6 @@
 {
   "name": "zeroview",
-  "version": "1.3",
+  "version": "1.4",
   "description": "porting from http://t_trace.wed.macserver.jp/overview.html",
   "browser_action": {
       "default_title": "zeroview",

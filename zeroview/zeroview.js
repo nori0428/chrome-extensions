@@ -75,7 +75,7 @@ function reset(e, target_scale){
     //CSS Animation for recovering
     document.body.style.webkitTransform = 'scale(1)';
     goSmooth = setInterval('go_smooth('+scrollY+')', 10);
-    setTimeout('stop_scroll\('+scrollY+'\)', 500);
+    setTimeout('stop_scroll('+scrollY+')', 500);
     document.body.removeEventListener('mousemove', function(e){moveTarget(e, target_scale);}, true );
     e.stopPropagation();
 }
