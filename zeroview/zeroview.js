@@ -32,23 +32,23 @@ var target = document.body;
 var target_height = window.innerHeight;
 var original_page_height = target.scrollHeight;
 var original_page_scroll = window.pageYOffset;
-var orgiginal_page_width = target.scrollWidth;
+var original_page_width = target.scrollWidth;
 
 //Calculating scale
 var target_scale = Math.max(target_height/original_page_height, 0.2);
 
 //CSS Animation
 target.style.webkitTransition = '-webkit-transform 0.5s ease-in';
-target.style.webkitTransformOrigin = orgiginal_page_width / 2 + 'px 0';
+target.style.webkitTransformOrigin = original_page_width / 2 + 'px 0';
 
 //Scrolling to top
 goSmooth = setInterval('go_smooth(0)', 10);
-setTimeout('stop_scroll\(0\)', 500);
+setTimeout('stop_scroll(0)', 500);
 
 //Creating target frame
 var target_frame = document.createElement('div');
 target_frame.style.position = 'absolute';
-target_frame.style.width = orgiginal_page_width + 'px';
+target_frame.style.width = original_page_width + 'px';
 target_frame.style.height = target_height + 'px';
 target_frame.style.top = original_page_scroll + 'px';
 target_frame.style.border = 'solid ' + 2/target_scale + 'px rgb(40, 20, 10)';
